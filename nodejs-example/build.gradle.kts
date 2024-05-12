@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin
 import org.jetbrains.kotlin.gradle.targets.js.npm.tasks.KotlinNpmInstallTask
 
 plugins {
-    kotlin("multiplatform") version "1.9.20"
+    kotlin("multiplatform") version "1.9.24"
     // kotlin("multiplatform") version "2.0.0-Beta1"
 }
 
@@ -12,7 +12,8 @@ repositories {
 }
 
 kotlin {
-    wasmJs {
+    js(IR) {
+        useCommonJs()
         binaries.executable()
         nodejs()
     }
@@ -25,4 +26,8 @@ rootProject.the<NodeJsRootExtension>().apply {
 
 tasks.withType<org.jetbrains.kotlin.gradle.targets.js.npm.tasks.KotlinNpmInstallTask>().configureEach {
     args.add("--ignore-engines")
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.targets.js.ir.KotlinJsIrLink> {
+    compilerOptions.moduleKind.set(org.jetbrains.kotlin.gradle.dsl.JsModuleKind.MODULE_COMMONJS)
 }
