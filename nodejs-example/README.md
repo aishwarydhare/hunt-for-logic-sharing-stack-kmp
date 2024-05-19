@@ -38,3 +38,15 @@ You can also share your comments with [@bashorov](https://twitter.com/bashorov) 
 
 * [Kotlin/Wasm](https://kotl.in/wasm/)
 * [Other Kotlin/Wasm examples](https://github.com/Kotlin/kotlin-wasm-examples/tree/main)
+
+## Some helpful commands
+
+chmod +x ./gradlew
+./gradlew tasks
+./gradlew build
+./gradlew wasmJsNodeRun
+./gradlew jsRun
+./gradlew jsRun -t
+./gradlew jsRun -di
+./gradlew kotlinUpgradeYarnLock
+./gradlew jsNodeRun
