@@ -1,4 +1,4 @@
-rootProject.name = "kotlin-wasm-nodejs-example"
+rootProject.name = "kotlin-nodejs-example"
 
 pluginManagement {
     resolutionStrategy {

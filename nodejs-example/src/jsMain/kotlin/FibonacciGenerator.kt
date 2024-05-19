@@ -1,5 +1,7 @@
-data class FibonacciInput(val count: Int)
+package my.kotlinNodejsExample
 
+@ExperimentalJsExport
+@JsExport
 class FibonacciGenerator {
     fun generate(input: FibonacciInput): List<Int> {
         if (input.count < 1) return emptyList()

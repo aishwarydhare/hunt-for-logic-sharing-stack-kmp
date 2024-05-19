@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalDistributionDsl
 import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
 import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin
 import org.jetbrains.kotlin.gradle.targets.js.npm.tasks.KotlinNpmInstallTask
@@ -13,15 +14,22 @@ repositories {
 
 kotlin {
     js(IR) {
-        useCommonJs()
+        moduleName = "myModuleName"
         binaries.executable()
         nodejs()
+        useCommonJs()
+        generateTypeScriptDefinitions()
+    }
+
+    sourceSets {
+        jsMain.dependencies {
+            implementation(npm("algo-visual", "2.1.4"))
+        }
     }
 }
 
 rootProject.the<NodeJsRootExtension>().apply {
-    nodeVersion = "22.0.0-nightly202404032241e8c5b3"
-    nodeDownloadBaseUrl = "https://nodejs.org/download/nightly"
+    download = false
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.targets.js.npm.tasks.KotlinNpmInstallTask>().configureEach {
@@ -30,4 +38,8 @@ tasks.withType<org.jetbrains.kotlin.gradle.targets.js.npm.tasks.KotlinNpmInstall
 
 tasks.withType<org.jetbrains.kotlin.gradle.targets.js.ir.KotlinJsIrLink> {
     compilerOptions.moduleKind.set(org.jetbrains.kotlin.gradle.dsl.JsModuleKind.MODULE_COMMONJS)
+}
+
+rootProject.the<org.jetbrains.kotlin.gradle.targets.js.yarn.YarnRootExtension>().apply{
+    download = false
 }

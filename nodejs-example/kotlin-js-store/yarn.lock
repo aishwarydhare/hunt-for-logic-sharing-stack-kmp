@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+algo-visual@2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/algo-visual/-/algo-visual-2.1.4.tgz#114891469d53b90bfb22df480a7baeb0f57fd869"
+  integrity sha512-Lj9qjUrePpjFAXqDh6CtMSlLR/MVifv8xtVR2jdVbTqqFhlXtsKLRcs7G5nSffMLEz4JsxFWyar5y9p50huccg==
+
 ansi-colors@4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-4.1.1.tgz#cbb9ae256bf750af1eab344f229aa27fe94ba348"
