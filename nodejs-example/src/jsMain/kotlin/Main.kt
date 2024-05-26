@@ -6,8 +6,8 @@ fun main() {
     val fibonacciGenerator = FibonacciGenerator()
     val result = fibonacciGenerator.generate(fibonacciInput)
     println("Hello World!!")
-    println("From Kotlin Native - Fib term at ${fibonacciInput.count} location is ${result.last()}")
-    
+    println("From Kotlin Native - Fib term at ${fibonacciInput.count} location is ${result}")
+
     /*
     // Trying JS library in Kotlin now
     const fibonacci = require ('fibonacci');

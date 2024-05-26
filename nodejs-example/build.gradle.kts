@@ -24,6 +24,8 @@ kotlin {
     sourceSets {
         jsMain.dependencies {
             implementation(npm("algo-visual", "2.1.4"))
+            implementation(npm("webpack", "^5.91.0"))
+            implementation(npm("webpack-cli", "^5.1.4"))
         }
     }
 }
